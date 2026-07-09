@@ -1,6 +1,0 @@
-# IDE/Editor Settings
-.vscode/**/*
-.idea
-
-# Dependencies
-theme/node_modules

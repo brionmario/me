@@ -1,18 +1,15 @@
-# Personal Blog Index & Resources
-
-This repo contains resources used in [my personal blog](http://brionmario.com/blog) and other publishing platforms.
+This repo is a hub for all my blogs, where I share my thoughts, experiences, and insights on various topics. You can find my blogs on different platforms, and I also maintain a personal blog for more in-depth articles.
 
 ## Blogs
 
-<!-- BLOGS_LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+## Articles
 
-<!-- BLOGS_LIST:END -->
+## Workshops (Organizer)
 
-## Publishing Platforms
+## Workshops (Speaker)
 
-Following are the links for the platforms that I publish my blogs. 
+## Conferences (Speaker)
 
-[**Personal Blog ▸**](http://brionmario.com/blog)
+## Competitions (Participant)
 
-[**Medium ▸**](https://medium.com/@brionmario)
+## Competitions (Judge)
