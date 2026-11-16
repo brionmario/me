@@ -41,6 +41,7 @@ This repo is a hub for all my blogs, where I share my thoughts, experiences, and
 - [Introducing Asgardeo's New Organization Branding Feature](https://wso2.com/blogs/thesource/introducing-asgardeos-new-organization-branding-feature/) (07 Jul 2022)
 
 ## Workshops (Speaker)
+- Why Competitive Programming Still Matters in the AI Era, SLIITXTREME (2026, Online) · [📑 Grab Slides](https://brionmario.github.io/me/workshops/sliitxtreme-2026-cp-in-the-ai-era/)
 - Cracking the Technical Interview, SLIIT CSSC Intern Ready 3 (2026, Malabe, Sri Lanka) · [📑 Grab Slides](https://brionmario.github.io/me/workshops/sliit-cssc-intern-ready-3/)
 - Node.js / Firebase Session, IDEALIZE (2023, Moratuwa, Sri Lanka) · [📑 Grab Slides](https://brionmario.github.io/me/workshops/idealize-2023-nodejs-firebase/)
 - UX Workshop, DesignSprint Workshop of CodeSprint 7.0, IEEE Committee of IIT (2023, Colombo, Sri Lanka) · [📑 Grab Slides](https://brionmario.github.io/me/workshops/codesprint-7-ux-workshop/)
