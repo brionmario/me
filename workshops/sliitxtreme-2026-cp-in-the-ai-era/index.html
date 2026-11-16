@@ -343,8 +343,8 @@
     .poll-split { grid-template-columns: 0.75fr 1.25fr; gap: 1.6rem; }
     .logo-strip { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
     .logo-strip .logo, .logo-strip .logo-emoji { width: clamp(26px, 4.4vh, 40px); height: clamp(26px, 4.4vh, 40px); font-size: clamp(22px, 3.8vh, 34px); line-height: 1; display: inline-grid; place-items: center; }
-    .poll-frame { position: relative; height: min(52vh, 460px); aspect-ratio: 1000 / 960; max-width: 100%; justify-self: center; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: #1e3a8a; }
-    .poll-frame iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 960px; border: 0; transform-origin: top left; transform: scale(var(--poll-scale, 0.5)) translateX(-255px); }
+    .poll-frame { position: relative; height: min(52vh, 460px); aspect-ratio: 1000 / 960; max-width: 100%; justify-self: center; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: #1a1530; border: 1px solid rgba(167,139,250,0.35); }
+    .poll-frame iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 960px; border: 0; transform-origin: top left; transform: scale(var(--poll-scale, 0.5)) translateX(-255px); filter: hue-rotate(38deg) saturate(0.85) brightness(0.72) contrast(1.25); }
     aside.notes { display: none; }
     #notes-panel {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
