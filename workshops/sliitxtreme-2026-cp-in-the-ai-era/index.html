@@ -343,8 +343,8 @@
     .poll-split { grid-template-columns: 0.75fr 1.25fr; gap: 1.6rem; }
     .logo-strip { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
     .logo-strip .logo, .logo-strip .logo-emoji { width: clamp(26px, 4.4vh, 40px); height: clamp(26px, 4.4vh, 40px); font-size: clamp(22px, 3.8vh, 34px); line-height: 1; display: inline-grid; place-items: center; }
-    .poll-frame { position: relative; height: min(52vh, 460px); aspect-ratio: 860 / 720; max-width: 100%; justify-self: center; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: #1e3a8a; }
-    .poll-frame iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 720px; border: 0; transform-origin: top left; transform: scale(var(--poll-scale, 0.5)) translateX(-250px); }
+    .poll-frame { position: relative; height: min(52vh, 460px); aspect-ratio: 1000 / 960; max-width: 100%; justify-self: center; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: #1e3a8a; }
+    .poll-frame iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 960px; border: 0; transform-origin: top left; transform: scale(var(--poll-scale, 0.5)) translateX(-255px); }
     aside.notes { display: none; }
     #notes-panel {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
@@ -1322,7 +1322,7 @@
     if (!box) return;
     var fit = function () {
       var r = box.getBoundingClientRect();
-      box.style.setProperty('--poll-scale', Math.min(r.width / 860, r.height / 720));
+      box.style.setProperty('--poll-scale', Math.min(r.width / 1000, r.height / 960));
     };
     new ResizeObserver(fit).observe(box);
     fit();
