@@ -233,6 +233,10 @@
     .timer.done::after { content: "time's up!"; color: var(--bad); }
     .live-badge { color: var(--bad); }
     .problem p { color: #cbd5e1; margin-bottom: 0.6rem; }
+    .problem.solo { max-width: 960px; padding: clamp(1.4rem, 3.5vh, 2.2rem) clamp(1.4rem, 3vw, 2.4rem); }
+    .problem.solo h3 { font-size: clamp(1.4rem, 3.6vh, 2rem); }
+    .problem.solo p { font-size: clamp(1.15rem, 3vh, 1.6rem); line-height: 1.5; }
+    .problem.solo .cons { font-size: clamp(0.9rem, 2.2vh, 1.15rem); }
     .problem .cons { font-family: var(--font-mono); font-size: clamp(0.75rem, 1.7vh, 0.9rem); color: var(--accent-2); }
     pre.io { padding: 0.8rem 1rem; font-size: clamp(0.8rem, 2vh, 1rem); }
     .option { text-align: center; }
@@ -349,7 +353,7 @@
     .static-only { display: none; }
     html.after-event .live-only { display: none !important; }
     html.after-event .static-only { display: revert; }
-    html.after-event .teams.static-only { display: grid; }
+    html.after-event .teams.static-only, html.after-event .grid-2.static-only { display: grid; }
     html.after-event .qa-split { grid-template-columns: 1fr; }
     :root { --slido: #198038; }
     .slido-brand { display: inline-flex; align-items: center; gap: 0.7rem; margin-bottom: 0.6rem; }
@@ -360,6 +364,7 @@
     .slido-qr { border: 4px solid var(--slido); padding: 1rem 1rem 0.6rem; line-height: 1; text-align: center; }
     .slido-caption { margin-top: 0.6rem; color: #1a1a1a; font-family: var(--font-body); font-size: 0.95rem; }
     .slido-caption b { color: var(--slido); font-family: var(--font-heading); }
+    .company-logo { display: block; height: clamp(2rem, 6vh, 3.2rem); width: auto; color: #fff; margin-bottom: clamp(0.8rem, 2vh, 1.2rem); }
     aside.notes { display: none; }
     #notes-panel {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
@@ -415,9 +420,10 @@
       <h2 style="font-size: clamp(2.4rem, min(4.4vw, 7vh), 4rem)">Hi, I'm <span class="hl">Brion</span></h2>
       <div class="about-hero">
         <div>
-          <p class="sub" style="font-size: clamp(1.1rem, 2.6vh, 1.5rem)">Technical Lead with 7+ years at WSO2, on the Identity &amp; Access Management team.</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -14.34 571.02 105.66" class="company-logo" role="img" aria-label="Choreo Labs logo"><title>Choreo Labs</title><g fill="currentColor"><g id="icon"><ellipse cx="84.55" cy="19.34" rx="15.9" ry="7.17"></ellipse><ellipse cx="74.99" cy="1.79" rx="15.31" ry="6.05"></ellipse><ellipse cx="55.96" cy="-11.43" rx="16.69" ry="2.89"></ellipse><ellipse cx="84.55" cy="57.63" rx="15.9" ry="7.17"></ellipse><ellipse cx="74.99" cy="75.18" rx="15.31" ry="6.05"></ellipse><ellipse cx="55.96" cy="88.4" rx="16.69" ry="2.89"></ellipse><ellipse cx="16.06" cy="38.49" rx="15.9" ry="7.17"></ellipse><ellipse cx="21.64" cy="56.03" rx="12.98" ry="6.05"></ellipse><ellipse cx="21.64" cy="20.94" rx="12.98" ry="6.05"></ellipse></g><g id="wordmark" transform="translate(129.12 0)" stroke="#FFFFFF" stroke-width="0.21" stroke-linejoin="round"><path d="M208.68,66.49c-15.62,0-28.28-13.32-28.28-29.76s12.66-29.67,28.28-29.67c12.99,0,22.520,7.73,26.14,18.99h-7.32c-3.12-7.150-9.54-12.33-18.82-12.33-11.75,0-21.37,10.44-21.37,23.02s9.62,23.02,21.37,23.02c8.38,0,15.37-4.77,18.82-12.33h7.32c-3.86,11.59-13.89,19.07-26.14,19.07Z" transform="translate(-180.4 0)"></path><path d="M276.17,65.5h-6.9v-25.73c0-6.58-3.53-11.26-10.36-11.26-6.41,0-11.1,4.77-11.1,11.1v25.89h-6.99V4.34h6.99v23.1c2.88-3.29,7.07-5.34,12.08-5.34,10.36,0,16.28,7.4,16.28,17.92v25.48Z" transform="translate(-180.48 0)"></path><path d="M325.82,44.46c0,12.17-9.21,22.03-21.29,22.030s-21.29-9.86-21.29-22.03,9.29-22.36,21.29-22.36,21.29,10.03,21.29,22.36ZM318.83,44.46c0-8.79-6.41-15.95-14.3-15.95s-14.22,7.15-14.22,15.95,6.41,15.62,14.22,15.62,14.3-6.99,14.3-15.62Z" transform="translate(-182.33 0)"></path><path d="M352.78,22.35v6.49c-8.14-.74-13.32,3.21-13.32,11.34v25.32h-6.9v-25.15c0-12.82,9.12-19.32,20.22-18Z" transform="translate(-183.08 0)"></path><path d="M397.49,52.35c-2.96,9.04-10.19,14.14-19.97,14.14-12.17,0-21.7-9.7-21.7-22.11s9.54-22.28,21.29-22.28c10.93,0,21.45,9.04,21.37,24.08h-35.59c.9,8.79,7.64,13.970,14.63,13.97,6,0,10.27-2.88,12.58-7.81h7.4ZM390.75,39.94c-1.73-6.91-7.48-11.51-13.65-11.51-5.84,0-12,4.27-13.81,11.51h27.45Z" transform="translate(-183.83 0)"></path><path d="M325.82,44.46c0,12.17-9.21,22.03-21.29,22.030s-21.29-9.86-21.29-22.03,9.29-22.36,21.29-22.36,21.29,10.03,21.29,22.36ZM318.83,44.46c0-8.79-6.41-15.95-14.3-15.95s-14.22,7.15-14.22,15.95,6.41,15.62,14.22,15.62,14.3-6.99,14.3-15.62Z" transform="translate(-65.47 0)"></path><path d="M215.20,134.87v6.74h-16.44c-10.36,0-17.1-6.33-17.1-17.1v-39.95h6.99v39.95c0,6.74,3.53,10.36,10.11,10.36h16.44Z" transform="translate(93.2 -76.11)"></path><path d="M261.39,141.61h-6.74v-6.58c-3.29,4.6-8.63,7.64-14.63,7.64-11.67,0-21.12-9.54-21.120-22.19s9.54-22.28,21.29-22.28,21.21,9.78,21.21,22.28v21.12ZM240.19,104.62c-7.89,0-14.3,6.99-14.3,15.86s6.41,15.7,14.3,15.7,14.3-6.99,14.3-15.7-6.58-15.86-14.3-15.86Z" transform="translate(92.45 -76.11)"></path><path d="M290.66,142.59c-12,0-21.29-9.7-21.29-22.28v-39.87h6.74v24.91c3.45-4.36,8.8-7.15,14.63-7.15,11.75,0,21.12,9.45,21.12,22.11s-9.54,22.28-21.21,22.28ZM290.66,104.62c-7.81,0-14.3,6.99-14.3,15.7s6.58,15.87,14.3,15.87,14.22-6.91,14.22-15.87-6.41-15.7-14.22-15.7Z" transform="translate(89.91 -76.11)"></path><path d="M336.2,142.68c-10.28,0-17.76-5.51-18.91-14.47h7.07c.9,4.93,5.75,7.97,11.84,7.97,6.58,0,10.6-3.21,10.6-6.91,0-2.96-1.15-5.18-11.51-6.58-10.27-1.48-16.52-3.95-16.52-11.92,0-6.08,5.26-12.58,16.6-12.58,9.78,0,16.36,4.93,17.26,13.23h-7.07c-.99-4.52-5.010-6.82-10.19-6.82-5.59,0-9.62,2.63-9.62,5.92,0,3.04,2.38,4.11,10.69,5.42,9.37,1.48,17.1,3.29,17.1,12.91,0,8.47-7.23,13.81-17.34,13.81Z" transform="translate(88.25 -76.11)"></path></g></g></svg>
+          <p class="sub" style="font-size: clamp(1.1rem, 2.6vh, 1.5rem)">Technical Lead with 7+ years at Choreo Labs (formerly WSO2), on the Identity &amp; Access Management team.</p>
           <div class="pills" style="margin-top: 1.2rem">
-            <span class="pill solid">WSO2</span>
+            <span class="pill solid">Choreo Labs</span>
             <span class="pill">Technical Lead</span>
             <span class="pill">Identity &amp; Access Management</span>
           </div>
@@ -473,15 +479,15 @@
       <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">Today's <span class="hl">Agenda</span></h2>
       <div class="eras">
         <div class="era agenda"><span class="when">01</span><span class="what">Evolution of Programming</span></div>
-        <div class="era agenda"><span class="when">02</span><span class="what">Where AI gets it wrong</span></div>
-        <div class="era agenda"><span class="when">03</span><span class="what">What still matters</span></div>
+        <div class="era agenda"><span class="when">02</span><span class="what">Programming with AI</span></div>
+        <div class="era agenda"><span class="when">03</span><span class="what">What competitive programming trains</span></div>
         <div class="era agenda"><span class="when">04</span><span class="what">How engineering work has shifted</span></div>
         <div class="era agenda"><span class="when">05</span><span class="what">How to train now</span></div>
       </div>
     </div>
     <aside class="notes">
       <p>Quick bridge from session 1 (rules, scoring, penalties): "Last time was how you're scored. Today is about how you think."</p>
-      <p>Then the five parts: how programming changed, some simple things AI still gets wrong, what still matters, how engineering work has shifted, and how to train now.</p>
+      <p>Then the five parts: how programming changed, programming with AI, what competitive programming trains, how engineering work has shifted, and how to train now.</p>
     </aside>
   </section>
 
@@ -490,33 +496,13 @@
     <div class="slide">
       <div class="big-label">Let's be honest</div>
       <h2>If AI can solve contest problems…<br /><span class="hl">why are we here?</span></h2>
-      <p class="sub">Most of us now use AI to write code. So it's a fair question. First, which AI team are you on?</p>
-      <div class="shot-split poll-split live-only">
-        <div class="grid" style="gap: 1.2rem">
-          <div class="logo-strip"><span class="logo" role="img" aria-label="Claude logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/claude.svg)"></span><span class="logo" role="img" aria-label="Copilot logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/githubcopilot.svg)"></span><span class="logo" role="img" aria-label="Gemini logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/googlegemini.svg)"></span><span class="logo" role="img" aria-label="ChatGPT logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/openai.svg)"></span><span class="logo-emoji" aria-hidden="true">✨</span><span class="logo-emoji" aria-hidden="true">🧠</span></div>
-          <div class="chat-prompt vote-row"><div><span class="tag">Vote on Slido</span> Scan the QR to vote, or go to <b>slido.com</b> and enter <b>#1062604</b>.</div><div class="mini-qr" data-qr="https://app.sli.do/event/g8gcjPSyEbatkrUApTwaW7/embed/polls/3a8d6dc1-f514-47a8-84f0-15adaf96246f" role="img" aria-label="QR code that opens the Slido poll"></div></div>
-        </div>
-        <div class="poll-frame"><iframe data-src="https://wall.sli.do/event/g8gcjPSyEbatkrUApTwaW7?section=7fe2f9cf-d611-4941-9c6b-53001816d119&amp;integration=shared-present-mode" title="Slido live results: Which AI team are you on?" loading="lazy"></iframe></div>
-      </div>
-      <div class="teams static-only">
-        <div class="card team"><span class="num">1</span><span class="logo" role="img" aria-label="Claude logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/claude.svg)"></span><h3>Team Claude</h3></div>
-        <div class="card team"><span class="num">2</span><span class="logo" role="img" aria-label="Copilot logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/githubcopilot.svg)"></span><h3>Team Copilot</h3></div>
-        <div class="card team"><span class="num">3</span><span class="logo" role="img" aria-label="Gemini logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/googlegemini.svg)"></span><h3>Team Gemini</h3></div>
-        <div class="card team"><span class="num">4</span><span class="logo" role="img" aria-label="ChatGPT logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/openai.svg)"></span><h3>Team ChatGPT</h3></div>
-        <div class="card team"><span class="num">5</span><span class="logo-emoji" aria-hidden="true">✨</span><h3>Something else</h3></div>
-        <div class="card team"><span class="num">6</span><span class="logo-emoji" aria-hidden="true">🧠</span><h3>No AI for me</h3></div>
-      </div>
+      <p class="sub">Most of us now use AI to write code. So it's a fair question.</p>
+
     </div>
     <aside class="notes">
-      <p>Pose the question, then run the team vote on Slido.</p>
-      <ul>
-        <li>In Slido admin, press <b>Start poll</b> on "Which AI team are you on?" when you reach this slide.</li>
-        <li>The slide shows Slido's live results view, so the bars move as votes come in. It shows whichever poll is active, so start this one first. Give it about 30 seconds, then read out the winning team.</li>
-        <li>Paste the Slido link in the Meet chat too.</li>
-      </ul>
-      <p>Backup if Slido is slow: call each team and ask people to raise their hand in Meet.</p>
-      <p>Then: "Whatever team you're on, AI is very good now. To understand how we got here, let's go back 80 years."</p>
-      <p>"Keep that in mind. I'm not going to pretend AI isn't good. It's very good. Let's look at how good."</p>
+      <p>Ask the question and let it sit for a moment. It's what many students are already thinking.</p>
+      <p>Tell them the rest of the talk is your answer.</p>
+      <p>Bridge: "To answer that, let's go back 80 years and see how we got here."</p>
     </aside>
   </section>
 
@@ -702,7 +688,7 @@
     <aside class="notes">
       <p>If English is the new programming language, then writing a precise specification is the new coding skill.</p>
       <p>Point at a contest problem statement: it is a very precise piece of English. Reading and writing those is excellent training for working with AI.</p>
-      <p>Bridge into part 2: "So we can now program in English. But how reliable is the AI on the other end? Let's look at where it gets things wrong."</p>
+      <p>Bridge: "So we can now program in English, and most of us already do. That brings us to part two: programming with AI."</p>
     </aside>
   </section>
 
@@ -710,11 +696,45 @@
     <div class="slide-num"></div>
     <div class="slide">
       <span class="part-num">02</span>
-      <h2>Where AI gets it wrong</h2>
+      <h2>Programming with AI</h2>
       <p class="sub">AI is impressive. It also gets some very simple things wrong.</p>
     </div>
     <aside class="notes">
-      <p>Act 02 of 5: Where AI gets it wrong. Pause briefly so the room resets before the new section.</p>
+      <p>Act 02 of 5: Programming with AI. Pause briefly so the room resets before the new section.</p>
+      <p>Bridge: "Most of us already program with AI. Let's find out which one you use."</p>
+    </aside>
+  </section>
+
+  <section>
+    <div class="slide-num"></div>
+    <div class="slide">
+      <div class="big-label">Quick poll</div>
+      <h2 style="font-size: clamp(2rem, min(4.4vw, 7vh), 3.8rem)">Which AI team <span class="hl">are you on?</span></h2>
+      <div class="shot-split poll-split live-only">
+        <div class="grid" style="gap: 1.2rem">
+          <div class="logo-strip"><span class="logo" role="img" aria-label="Claude logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/claude.svg)"></span><span class="logo" role="img" aria-label="Copilot logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/githubcopilot.svg)"></span><span class="logo" role="img" aria-label="Gemini logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/googlegemini.svg)"></span><span class="logo" role="img" aria-label="ChatGPT logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/openai.svg)"></span><span class="logo-emoji" aria-hidden="true">✨</span><span class="logo-emoji" aria-hidden="true">🧠</span></div>
+          <div class="chat-prompt vote-row"><div><span class="tag">Vote on Slido</span> Scan the QR to vote, or go to <b>slido.com</b> and enter <b>#1062604</b>.</div><div class="mini-qr" data-qr="https://app.sli.do/event/g8gcjPSyEbatkrUApTwaW7/embed/polls/3a8d6dc1-f514-47a8-84f0-15adaf96246f" role="img" aria-label="QR code that opens the Slido poll"></div></div>
+        </div>
+        <div class="poll-frame"><iframe data-src="https://wall.sli.do/event/g8gcjPSyEbatkrUApTwaW7?section=7fe2f9cf-d611-4941-9c6b-53001816d119&amp;integration=shared-present-mode" title="Slido live results: Which AI team are you on?" loading="lazy"></iframe></div>
+      </div>
+      <div class="teams static-only">
+        <div class="card team"><span class="num">1</span><span class="logo" role="img" aria-label="Claude logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/claude.svg)"></span><h3>Team Claude</h3></div>
+        <div class="card team"><span class="num">2</span><span class="logo" role="img" aria-label="Copilot logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/githubcopilot.svg)"></span><h3>Team Copilot</h3></div>
+        <div class="card team"><span class="num">3</span><span class="logo" role="img" aria-label="Gemini logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/googlegemini.svg)"></span><h3>Team Gemini</h3></div>
+        <div class="card team"><span class="num">4</span><span class="logo" role="img" aria-label="ChatGPT logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/openai.svg)"></span><h3>Team ChatGPT</h3></div>
+        <div class="card team"><span class="num">5</span><span class="logo-emoji" aria-hidden="true">✨</span><h3>Something else</h3></div>
+        <div class="card team"><span class="num">6</span><span class="logo-emoji" aria-hidden="true">🧠</span><h3>No AI for me</h3></div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>Run the team vote on Slido.</p>
+      <ul>
+        <li>In Slido admin, press <b>Start poll</b> on "Which AI team are you on?" when you reach this slide.</li>
+        <li>The slide shows Slido's live results view, so the bars move as votes come in. It shows whichever poll is active, so start this one first. Give it about 30 seconds, then read out the winning team.</li>
+        <li>Paste the Slido link in the Meet chat too.</li>
+      </ul>
+      <p>Backup if Slido is slow: call each team and ask people to raise their hand in Meet.</p>
+      <p>Then: "Whatever team you're on, AI is very good now. Let's look at what it does well, and where it slips."</p>
     </aside>
   </section>
 
@@ -818,11 +838,11 @@
     <div class="slide-num"></div>
     <div class="slide">
       <span class="part-num">03</span>
-      <h2>What still matters</h2>
+      <h2>What competitive programming trains</h2>
       <p class="sub">If AI can be confidently wrong, someone has to know better.</p>
     </div>
     <aside class="notes">
-      <p>Act 03 of 5: What still matters. Pause briefly so the room resets before the new section.</p>
+      <p>Act 03 of 5: What competitive programming trains. Pause briefly so the room resets before the new section.</p>
     </aside>
   </section>
 
@@ -871,6 +891,80 @@
     <aside class="notes">
       <p>Key message: each new abstraction was greeted with "now anyone can program". And it was partly true: more people did. But demand for people who could think clearly about problems went up, not down.</p>
       <p>Abstractions also leak: when the high-level thing breaks, the people who understand what's underneath are the ones who fix it.</p>
+      <p>Bridge: "So where do you build those skills? Let me show you a typical contest problem."</p>
+    </aside>
+  </section>
+
+  <section>
+    <div class="slide-num"></div>
+    <div class="slide">
+      <div class="big-label">Let's try one</div>
+      <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">A typical <span class="hl">contest problem</span></h2>
+      <div class="card problem solo">
+        <h3>Best Day to Trade</h3>
+        <p>You know a stock's price for the next <b>n</b> days. Buy on one day and sell on a <b>later</b> day. What's the biggest profit you can make? If no trade makes money, print <b>0</b>.</p>
+        <p class="cons">1 ≤ n ≤ 2·10<sup>5</sup> &nbsp;·&nbsp; 1 ≤ price ≤ 10<sup>9</sup> &nbsp;·&nbsp; 1 second</p>
+      </div>
+      <p class="sub">Looks easy. Let's test that.</p>
+    </div>
+    <aside class="notes">
+      <p>Read the problem out loud. Don't give any examples yet: the poll on the next slide asks the room for the answer.</p>
+      <p>If time allows, ask the room in the Meet chat: "What if prices only fall? What if there's only one day?" Those edge cases catch people out. A careless solution might print a negative number, or crash with one day.</p>
+      <p>Solution idea (for your reference): go through the days once, remember the lowest price so far, and at each day check "price today minus lowest so far". That's O(n).</p>
+      <p>Bridge: "Looks easy? Let's test that. Quick poll."</p>
+    </aside>
+  </section>
+
+  <section>
+    <div class="slide-num"></div>
+    <div class="slide">
+      <div class="big-label">Your turn · quick poll</div>
+      <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">Prices are <span class="hl">3 8 1 5</span>. What's the biggest profit?</h2>
+      <div class="shot-split poll-split live-only">
+        <div class="grid" style="gap: 1.2rem">
+          <div class="card"><h3>Pick one</h3><p style="font-size: clamp(1.4rem, 4vh, 2rem); font-weight: 700; letter-spacing: 0.08em">5 · 7 · 4 · 0</p><p>Remember: you have to buy before you sell.</p></div>
+          <div class="chat-prompt vote-row"><div><span class="tag">Vote on Slido</span> Scan the QR to vote, or go to <b>slido.com</b> and enter <b>#1062604</b>.</div><div class="mini-qr" data-qr="https://app.sli.do/event/g8gcjPSyEbatkrUApTwaW7/embed/polls/af74bf77-f69a-4415-a11c-2215afe5b95b" role="img" aria-label="QR code that opens the Slido poll"></div></div>
+        </div>
+        <div class="poll-frame"><iframe data-src="https://wall.sli.do/event/g8gcjPSyEbatkrUApTwaW7?section=7fe2f9cf-d611-4941-9c6b-53001816d119&amp;integration=shared-present-mode" title="Slido live results: biggest profit poll" loading="lazy"></iframe></div>
+      </div>
+      <div class="grid-2 answers static-only">
+        <div class="card good-card"><h3>5 ✓</h3><p>Buy at 3, sell at 8. The right answer.</p></div>
+        <div class="card hard-card"><h3>7 ✗</h3><p>8 − 1, but that sells on day 2 before buying on day 3. The trap.</p></div>
+        <div class="card hard-card"><h3>4 ✗</h3><p>Buy at 1, sell at 5. A real trade, just not the best one.</p></div>
+        <div class="card hard-card"><h3>0 ✗</h3><p>Only right when prices never go up.</p></div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>Run the second Slido poll.</p>
+      <ul>
+        <li>In Slido admin, <b>stop</b> the team poll and press <b>Start poll</b> on "Prices are 3 8 1 5. What's the biggest profit?". The results panel shows whichever poll is active.</li>
+        <li>Give it about 30 seconds. Paste the link in the Meet chat if needed.</li>
+      </ul>
+      <p>Reveal: the answer is <b>5</b> (buy at 3, sell at 8). <b>7</b> is the trap: 8 minus 1, but the 1 comes after the 8, so you'd be selling before you buy. <b>4</b> is a real trade but not the best one.</p>
+      <p>Point: anyone who picked 7 read the problem too fast. That's the first skill on the next slide.</p>
+      <p>Bridge: "Looks easy, but it caught some of us. Let's see which skills it actually needs."</p>
+    </aside>
+  </section>
+
+  <section>
+    <div class="slide-num">08</div>
+    <div class="slide">
+      <div class="big-label">Where you build those skills</div>
+      <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">Six skills in <span class="hl">one small problem</span></h2>
+      <div class="grid-3">
+        <div class="card"><span class="icon">01</span><h3>Breaking problems down</h3><p>"Best sale on each day = today's price minus the lowest price before it."</p></div>
+        <div class="card"><span class="icon">02</span><h3>Complexity intuition</h3><p>n can be 200,000. Trying every buy/sell pair is too slow. One pass is fast enough.</p></div>
+        <div class="card"><span class="icon">03</span><h3>Edge-case paranoia</h3><p>Prices only falling, only one day, all the same. Each one needs checking.</p></div>
+        <div class="card"><span class="icon">04</span><h3>Correctness</h3><p>Passing one example isn't enough. You need to know why it always works.</p></div>
+        <div class="card"><span class="icon">05</span><h3>Calm under pressure</h3><p>In a contest, a wrong submission costs penalty time. Check before you submit.</p></div>
+        <div class="card"><span class="icon">06</span><h3>Teamwork</h3><p>One person reads, one codes, one writes test cases. Then swap.</p></div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>Go card by card and point back to the problem on the previous slide.</p>
+      <p>The message: even a "simple" problem exercises all of these. Competitive programming is practice for exactly the skills that still matter when AI writes the code.</p>
+      <p>Cards 1–4 are about thinking. Cards 5–6 are about the contest itself, which is why SLIITXTREME is good training.</p>
+      <p>Bridge: "These aren't just contest skills. Let me show you a real example from my work."</p>
     </aside>
   </section>
 
@@ -895,56 +989,7 @@
       <p>The story: moving between apps meant visible redirects and a clunky sign-in, and you weren't sure the setup was secure enough.</p>
       <p>How you worked: you thought first. Your experience already pointed to a few possible solutions. Then you used Claude to validate and challenge them. Where it disagreed, you didn't just accept or ignore it: you re-evaluated and did your own research before deciding.</p>
       <p>Key message for students: think first, then use AI as a second opinion, not the first one. Be open to being wrong, but verify before you change your mind.</p>
-      <p>Frame it after the "what didn't change" slide: "Here's what that looks like in a real job, with AI in the loop." End with: "The tools changed, but the job didn't. So where do you build those skills? Let me show you a typical contest problem." Then go to the next slide.</p>
-    </aside>
-  </section>
-
-  <section>
-    <div class="slide-num"></div>
-    <div class="slide">
-      <div class="big-label">A typical contest problem</div>
-      <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">Same skills, <span class="hl">in a contest</span></h2>
-      <div class="grid-2" style="align-items: center">
-        <div class="card problem">
-          <h3>Best Day to Trade</h3>
-          <p>You know a stock's price for the next <b>n</b> days. Buy on one day and sell on a <b>later</b> day. What's the biggest profit you can make? If no trade makes money, print <b>0</b>.</p>
-          <p class="cons">1 ≤ n ≤ 2·10<sup>5</sup> &nbsp;·&nbsp; 1 ≤ price ≤ 10<sup>9</sup> &nbsp;·&nbsp; 1 second</p>
-        </div>
-        <table class="ctable tests">
-          <tr><th>Input</th><th>Output</th><th>Why</th></tr>
-          <tr><td>7 1 5 3 6 4</td><td>5</td><td>Buy at 1, sell at 6</td></tr>
-          <tr><td>7 6 4 3 1</td><td>0</td><td>Price only falls</td></tr>
-          <tr><td>5</td><td>0</td><td>Only one day</td></tr>
-          <tr><td>3 3 3</td><td>0</td><td>No change</td></tr>
-        </table>
-      </div>
-      <p class="sub">Looks easy. Let's see which skills it actually needs.</p>
-    </div>
-    <aside class="notes">
-      <p>Read the problem and walk through the first test case: the lowest price is 1 (day 2), and the best later price is 6, so the answer is 5.</p>
-      <p>Point out the last three test cases: they're the edge cases that catch people out. A careless solution might print a negative number for the falling prices, or crash with only one day.</p>
-      <p>Solution idea (for your reference): go through the days once, remember the lowest price so far, and at each day check "price today minus lowest so far". That's O(n).</p>
-    </aside>
-  </section>
-
-  <section>
-    <div class="slide-num">08</div>
-    <div class="slide">
-      <div class="big-label">Where you build those skills · what competitive programming trains</div>
-      <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">Six skills in <span class="hl">one small problem</span></h2>
-      <div class="grid-3">
-        <div class="card"><span class="icon">01</span><h3>Breaking problems down</h3><p>"Best sale on each day = today's price minus the lowest price before it."</p></div>
-        <div class="card"><span class="icon">02</span><h3>Complexity intuition</h3><p>n can be 200,000. Trying every buy/sell pair is too slow. One pass is fast enough.</p></div>
-        <div class="card"><span class="icon">03</span><h3>Edge-case paranoia</h3><p>Prices only falling, only one day, all the same. Each one has a test case.</p></div>
-        <div class="card"><span class="icon">04</span><h3>Correctness</h3><p>Passing the first example isn't enough. You need to know why it always works.</p></div>
-        <div class="card"><span class="icon">05</span><h3>Calm under pressure</h3><p>In a contest, a wrong submission costs penalty time. Check before you submit.</p></div>
-        <div class="card"><span class="icon">06</span><h3>Teamwork</h3><p>One person reads, one codes, one writes test cases. Then swap.</p></div>
-      </div>
-    </div>
-    <aside class="notes">
-      <p>Go card by card and point back to the problem on the previous slide.</p>
-      <p>The message: even a "simple" problem exercises all of these. Competitive programming is practice for exactly the skills that still matter when AI writes the code.</p>
-      <p>Cards 1–4 are about thinking. Cards 5–6 are about the contest itself, which is why SLIITXTREME is good training.</p>
+      <p>Frame it after the six skills: "Here's what those same skills look like in a real job, with AI in the loop." End with: "The tools changed, but the job didn't. Let's look at how engineering work has shifted." Then go to the next slide.</p>
     </aside>
   </section>
 
@@ -1209,8 +1254,8 @@
       <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">Five things to remember</h2>
       <div class="eras">
         <div class="era"><span class="when">01</span><span class="what">Evolution of Programming</span><code>Programming keeps moving up a level. English is just the newest one.</code></div>
-        <div class="era"><span class="when">02</span><span class="what">Gets it wrong</span><code>AI can sound confident and still be wrong, even on simple things.</code></div>
-        <div class="era"><span class="when">03</span><span class="what">Still matters</span><code>Understanding the problem, choosing the approach, checking it's right.</code></div>
+        <div class="era"><span class="when">02</span><span class="what">Programming with AI</span><code>AI can sound confident and still be wrong, even on simple things.</code></div>
+        <div class="era"><span class="when">03</span><span class="what">What contests train</span><code>Understanding the problem, choosing the approach, checking it's right.</code></div>
         <div class="era"><span class="when">04</span><span class="what">Work has shifted</span><code>Less typing, more reviewing, designing and owning the result.</code></div>
         <div class="era now"><span class="when">05</span><span class="what">Train now</span><code>Think first, then use AI as a second opinion. A little every day.</code></div>
       </div>
@@ -1376,17 +1421,17 @@
 </script>
 <script>
   (function () {
-    var box = document.querySelector('.poll-frame');
-    if (!box) return;
     if (document.documentElement.classList.contains('after-event')) return;
-    var frame = box.querySelector('iframe[data-src]');
-    if (frame) frame.src = frame.dataset.src;
-    var fit = function () {
-      var r = box.getBoundingClientRect();
-      box.style.setProperty('--poll-scale', Math.min(r.width / 1000, r.height / 960));
-    };
-    new ResizeObserver(fit).observe(box);
-    fit();
+    document.querySelectorAll('.poll-frame').forEach(function (box) {
+      var frame = box.querySelector('iframe[data-src]');
+      if (frame) frame.src = frame.dataset.src;
+      var fit = function () {
+        var r = box.getBoundingClientRect();
+        if (r.width) box.style.setProperty('--poll-scale', Math.min(r.width / 1000, r.height / 960));
+      };
+      new ResizeObserver(fit).observe(box);
+      fit();
+    });
   })();
 </script>
 </body>
