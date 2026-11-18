@@ -355,6 +355,10 @@
     html.after-event .static-only { display: revert; }
     html.after-event .teams.static-only, html.after-event .grid-2.static-only { display: grid; }
     html.after-event .qa-split { grid-template-columns: 1fr; }
+    html.polls-off .poll-live { display: none !important; }
+    html.polls-off .teams.static-only { display: grid; }
+    .poll-off-only { display: none; }
+    html.polls-off:not(.after-event) .poll-off-only { display: block; }
     :root { --slido: #198038; }
     .slido-brand { display: inline-flex; align-items: center; gap: 0.7rem; margin-bottom: 0.6rem; }
     .slido-mark { background: var(--slido); color: #fff; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1rem, 2.6vh, 1.4rem); letter-spacing: -0.02em; padding: 0.15rem 0.75rem 0.25rem; border-radius: 10px; line-height: 1.2; }
@@ -395,6 +399,9 @@
   if (Date.now() >= Date.parse('2026-11-19T18:30:00Z') || /[?&]static\b/.test(location.search)) {
     document.documentElement.classList.add('after-event');
   }
+  // Slido polls are turned off: the poll slides use Meet chat instead. Slido Q&A stays live.
+  // Delete this line to bring the live Slido polls back.
+  document.documentElement.classList.add('polls-off');
 </script>
 </head>
 <body>
@@ -710,7 +717,7 @@
     <div class="slide">
       <div class="big-label">Quick poll</div>
       <h2 style="font-size: clamp(2rem, min(4.4vw, 7vh), 3.8rem)">Which AI team <span class="hl">are you on?</span></h2>
-      <div class="shot-split poll-split live-only">
+      <div class="shot-split poll-split live-only poll-live">
         <div class="grid" style="gap: 1.2rem">
           <div class="logo-strip"><span class="logo" role="img" aria-label="Claude logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/claude.svg)"></span><span class="logo" role="img" aria-label="Copilot logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/githubcopilot.svg)"></span><span class="logo" role="img" aria-label="Gemini logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/googlegemini.svg)"></span><span class="logo" role="img" aria-label="ChatGPT logo" style="--logo: url(https://cdn.jsdelivr.net/npm/simple-icons@14.15.0/icons/openai.svg)"></span><span class="logo-emoji" aria-hidden="true">✨</span><span class="logo-emoji" aria-hidden="true">🧠</span></div>
           <div class="chat-prompt vote-row"><div><span class="tag">Vote on Slido</span> Scan the QR to vote, or go to <b>slido.com</b> and enter <b>#1062604</b>.</div><div class="mini-qr" data-qr="https://app.sli.do/event/g8gcjPSyEbatkrUApTwaW7/embed/polls/3a8d6dc1-f514-47a8-84f0-15adaf96246f" role="img" aria-label="QR code that opens the Slido poll"></div></div>
@@ -725,15 +732,14 @@
         <div class="card team"><span class="num">5</span><span class="logo-emoji" aria-hidden="true">✨</span><h3>Something else</h3></div>
         <div class="card team"><span class="num">6</span><span class="logo-emoji" aria-hidden="true">🧠</span><h3>No AI for me</h3></div>
       </div>
+      <p class="sub poll-off-only" style="margin-top: 1.4rem">Type your team's number in the <b>Meet chat</b>.</p>
     </div>
     <aside class="notes">
-      <p>Run the team vote on Slido.</p>
+      <p>Run the team vote in Meet (Slido polls are off).</p>
       <ul>
-        <li>In Slido admin, press <b>Start poll</b> on "Which AI team are you on?" when you reach this slide.</li>
-        <li>The slide shows Slido's live results view, so the bars move as votes come in. It shows whichever poll is active, so start this one first. Give it about 30 seconds, then read out the winning team.</li>
-        <li>Paste the Slido link in the Meet chat too.</li>
+        <li>Ask people to type their team's number (1 to 6) in the Meet chat, or call each team and ask them to raise a hand.</li>
+        <li>Give it about 30 seconds, then read out the winning team.</li>
       </ul>
-      <p>Backup if Slido is slow: call each team and ask people to raise their hand in Meet.</p>
       <p>Then: "Whatever team you're on, AI is very good now. Let's look at what it does well, and where it slips."</p>
     </aside>
   </section>
@@ -920,12 +926,17 @@
     <div class="slide">
       <div class="big-label">Your turn · quick poll</div>
       <h2 style="font-size: clamp(1.8rem, min(4vw, 6vh), 3.4rem)">Prices are <span class="hl">3 8 1 5</span>. What's the biggest profit?</h2>
-      <div class="shot-split poll-split live-only">
+      <div class="shot-split poll-split live-only poll-live">
         <div class="grid" style="gap: 1.2rem">
           <div class="card"><h3>Pick one</h3><p style="font-size: clamp(1.4rem, 4vh, 2rem); font-weight: 700; letter-spacing: 0.08em">5 · 7 · 4 · 0</p><p>Remember: you have to buy before you sell.</p></div>
           <div class="chat-prompt vote-row"><div><span class="tag">Vote on Slido</span> Scan the QR to vote, or go to <b>slido.com</b> and enter <b>#1062604</b>.</div><div class="mini-qr" data-qr="https://app.sli.do/event/g8gcjPSyEbatkrUApTwaW7/embed/polls/af74bf77-f69a-4415-a11c-2215afe5b95b" role="img" aria-label="QR code that opens the Slido poll"></div></div>
         </div>
         <div class="poll-frame"><iframe data-src="https://wall.sli.do/event/g8gcjPSyEbatkrUApTwaW7?section=7fe2f9cf-d611-4941-9c6b-53001816d119&amp;integration=shared-present-mode" title="Slido live results: biggest profit poll" loading="lazy"></iframe></div>
+      </div>
+      <div class="card poll-off-only" style="max-width: 900px">
+        <h3>Pick one</h3>
+        <p style="font-size: clamp(2rem, 7vh, 3.4rem); font-weight: 700; letter-spacing: 0.12em; margin: 0.4rem 0">5 · 7 · 4 · 0</p>
+        <p>Remember: you have to buy before you sell. <b>Type your answer in the Meet chat.</b></p>
       </div>
       <div class="grid-2 answers static-only">
         <div class="card good-card"><h3>5 ✓</h3><p>Buy at 3, sell at 8. The right answer.</p></div>
@@ -935,11 +946,7 @@
       </div>
     </div>
     <aside class="notes">
-      <p>Run the second Slido poll.</p>
-      <ul>
-        <li>In Slido admin, <b>stop</b> the team poll and press <b>Start poll</b> on "Prices are 3 8 1 5. What's the biggest profit?". The results panel shows whichever poll is active.</li>
-        <li>Give it about 30 seconds. Paste the link in the Meet chat if needed.</li>
-      </ul>
+      <p>Ask the room to type their answer (5, 7, 4 or 0) in the Meet chat. Give it about 30 seconds, then read out what people picked.</p>
       <p>Reveal: the answer is <b>5</b> (buy at 3, sell at 8). <b>7</b> is the trap: 8 minus 1, but the 1 comes after the 8, so you'd be selling before you buy. <b>4</b> is a real trade but not the best one.</p>
       <p>Point: anyone who picked 7 read the problem too fast. That's the first skill on the next slide.</p>
       <p>Bridge: "Looks easy, but it caught some of us. Let's see which skills it actually needs."</p>
@@ -1421,7 +1428,8 @@
 </script>
 <script>
   (function () {
-    if (document.documentElement.classList.contains('after-event')) return;
+    var root = document.documentElement.classList;
+    if (root.contains('after-event') || root.contains('polls-off')) return;
     document.querySelectorAll('.poll-frame').forEach(function (box) {
       var frame = box.querySelector('iframe[data-src]');
       if (frame) frame.src = frame.dataset.src;
